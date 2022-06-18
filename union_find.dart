@@ -39,13 +39,15 @@ class UnionFind {
     }
   }
 
-  // int count() {
-  //   List parents = [];
+  int count() {
+    List parents = [];
 
-  //   for (var i = 0; i < _p.length; i++) {
-  //     if (!parents.contains(find(i))) {
+    for (var i = 0; i < _p.length; i++) {
+      if (!parents.contains(find(i))) {
+        parents.add(find(i));
+      }
+    }
 
-  //     }
-  //   }
-  // }
+    return parents.length;
+  }
 }
